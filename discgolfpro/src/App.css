@@ -23,11 +23,13 @@ span:hover {
   pointer-events: none;
 }
 
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 1000s linear;
+@media (prefers-reduced-motion: no-preference) {
+  .disc {
+    animation: disc-spin infinite 5s linear;
+    margin-top:3vh;
+    height:8vh;
   }
-} */
+}
 
 .App-header {
   /* min-height: 80vh; */
@@ -49,7 +51,7 @@ font-size:calc(30px + 2.5vw);
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+@keyframes disc-spin {
   from {
     transform: rotate(0deg);
   }
