@@ -11,6 +11,11 @@ span {
   font-size: calc(20px + 1.5vmin);
 }
 
+span:hover {
+  color: yellow;
+  text-decoration: underline;
+}
+
 .App-logo {
   margin: 10vh 0;
   height: 30vh;

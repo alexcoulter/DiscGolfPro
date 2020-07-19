@@ -3,6 +3,15 @@ import logo from './disc.png';
 import './App.css';
 
 function App() {
+
+  function startRound(){
+    alert("started the round!");
+  }
+
+  function savedRound(){
+    alert("Here are your saved rounds!");
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +21,7 @@ function App() {
          For all your Disc Golf needs
         </p>
       </header>
-      <span>Start a round -</span><span>- View a saved round</span>
+      <span onClick={startRound}>Start a round -</span><span onClick={savedRound}>- View a saved round</span>
     </div>
   );
 }
