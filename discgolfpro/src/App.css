@@ -1,23 +1,43 @@
-.App {
-  text-align: center;
+html, body, #root {
   background-color: rgb(18, 41, 18);
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  padding:0;
+  margin: 0;
+  overflow: hidden;
 }
 
-span {
-  display:inline-block;
+p {
+  font-size: 20px;
+}
+
+.navbar {
+  background-color: rgba(42,42,42,.95);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar p:hover {
+  color: rgb(135, 206, 250) !important;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: rgb(135, 206, 250);
+}
+
+.navbar p {
+  font-size: 20px;
   color: white;
-  font-size: calc(20px + 1.5vmin);
-}
-
-span:hover {
-  color: yellow;
-  text-decoration: underline;
+  padding: 0px 20px !important;
+  margin-top: 10px;
+  border-left: 1px dotted grey;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
 .App-logo {
-  margin: 10vh 0;
+  margin: 5vh 0;
   height: 30vh;
   min-height: 30vmin;
   pointer-events: none;
@@ -26,13 +46,11 @@ span:hover {
 @media (prefers-reduced-motion: no-preference) {
   .disc {
     animation: disc-spin infinite 5s linear;
-    margin-top:3vh;
     height:8vh;
   }
 }
 
-.App-header {
-  /* min-height: 80vh; */
+.main {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,14 +59,35 @@ span:hover {
   color: #29abe1;
 }
 
-.App-header h1 {
+.main h1 {
 color: white;
-margin-top:5vh;
-font-size:calc(30px + 2.5vw);
+margin-top:10vh;
+font-size:calc(20px + 2.5vw);
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.start-main, .saved-main {
+  color: white;
+  text-align: center;
+  padding-top:80px;
+}
+
+.start-main h4, .saved-main h4 {
+  color: #29abe1;
+  margin-bottom: 20px;
+}
+
+.course-input {
+  max-width: 400px;
+  width: 95%;
+  margin:0 auto;
+}
+
+.start-play-btn {
+margin-top: 50px;
 }
 
 @keyframes disc-spin {
