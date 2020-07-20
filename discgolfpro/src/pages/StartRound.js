@@ -45,7 +45,7 @@ class StartRound extends Component {
   }
 
   redirect = () => {
-    alert("here we go!!!");
+    alert(`Time to play ${this.state.numHoles} holes on the ${this.state.layout} layout at ${this.state.course}`);
   }
 
 

@@ -1,10 +1,9 @@
 html, body, #root {
-  background-color: rgb(18, 41, 18);
-  height: 100%;
+  background-color: rgb(21, 58, 21);
+  min-height: 100%;
   width: 100%;
   padding:0;
   margin: 0;
-  overflow: hidden;
 }
 
 p {
@@ -12,19 +11,19 @@ p {
 }
 
 .navbar {
-  background-color: rgba(42,42,42,.95);
+  background-color: #29abe1 !important;
   position: fixed;
   width: 100%;
   z-index: 100;
 }
 
 .navbar p:hover {
-  color: rgb(135, 206, 250) !important;
+  color: #29abe1 !important;
 }
 
 .link:hover {
   text-decoration: none;
-  color: rgb(135, 206, 250);
+  color: #29abe1 !important;
 }
 
 .navbar p {
@@ -78,6 +77,14 @@ font-size:calc(20px + 2.5vw);
 .start-main h4, .saved-main h4 {
   color: #29abe1;
   margin-bottom: 20px;
+}
+
+.btn-info {
+  background-color: #29abe1 !important ;
+}
+
+.MuiSlider-root {
+  color: #29abe1 !important ;
 }
 
 .course-input {
