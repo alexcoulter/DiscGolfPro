@@ -7,77 +7,130 @@ class StartRound extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      courseInput: "",
-      layoutInput: "",
       course: "",
       layout: "",
-      numHoles: 18
+      numHoles: 18,
+      hole: 1,
+      score: 0,
+      roundStarted: false,
+      message: ""
     };
   }
 
+
+  start = (e) => {
+    e.preventDefault();
+    this.setState({
+      roundStarted: true
+    });
+  }
+
+  next = (e) => {
+    e.preventDefault();
+    let newHole = this.state.hole + 1;
+    this.setState({
+      hole: newHole
+    });
+  }
+
+  birdie = (e) => {
+    let newScore = this.state.score + 2;
+    let newHole = this.state.hole + 1;
+    this.setState({ 
+      score: newScore,
+      hole: newHole,
+      message: "Nice Birdie!" 
+    });
+  }
+  par = (e) => {
+    let newScore = this.state.score + 3;
+    let newHole = this.state.hole + 1;
+    this.setState({ 
+      score: newScore,
+      hole: newHole,
+      message: "Good Par!"
+    });
+  }
+  bogey = (e) => {
+    let newScore = this.state.score + 4;
+    let newHole = this.state.hole + 1;
+    this.setState({ 
+      score: newScore,
+      hole: newHole,
+      message: "Bogey's not too bad!"
+      });
+  }
+
   handleCourseChange = (event) => {
-    this.setState({ courseInput: event.target.value });
+    this.setState({ course: event.target.value });
   }
 
   handleLayoutChange = (event) => {
-    console.log(event.target.value);
-    this.setState({ layoutInput: event.target.value });
+    this.setState({ layout: event.target.value });
   }
 
-  setCourse = (e) => {
-    e.preventDefault();
-    this.setState({
-      course: this.state.courseInput
-    });
-  }  
 
-  setLayout = (e) => {
-    e.preventDefault();
-    this.setState({
-      layout: this.state.layoutInput
-    });
-  }  
-
-   getNumHoles = (event,value) => {
+  getNumHoles = (event, value) => {
     this.setState({
       numHoles: value
     });
-  }
 
-  redirect = () => {
-    alert(`Time to play ${this.state.numHoles} holes on the ${this.state.layout} layout at ${this.state.course}`);
   }
 
 
   render() {
-    return (
-      <div className="start-main">
-        <h4>Start a new round:</h4>
-        <p>What course are you playing?</p>
-        <div className="input-group course-input mb-3">
-          <input type="text" className="form-control" onChange={this.handleCourseChange} placeholder="Course Name" aria-label="Course Name" aria-describedby="button-addon2" />
-          <div className="input-group-append">
-            <button className="btn btn-info" onClick={this.setCourse} type="button" id="course-btn">Submit</button>
+    if (!this.state.roundStarted) {
+      return (
+        <div className="start-main">
+          <h4>Start a new round:</h4>
+          <p>What course are you playing?</p>
+          <div className="input-group course-input mb-3">
+            <input type="text" className="form-control" id="courseName" onChange={this.handleCourseChange} placeholder="Course Name" aria-label="Course Name" aria-describedby="button-addon2" />
+            <div className="input-group-append">
+            </div>
           </div>
-        </div>
-        <p>{this.state.course ? `You're Playing: ${this.state.course}` : ""}</p>
 
-      <Slider getNumHoles={this.getNumHoles} />
-      <p>This course has {this.state.numHoles} holes</p>
+          <Slider getNumHoles={this.getNumHoles} />
+          <p>This course has {this.state.numHoles} holes</p>
 
-      <p>What Layout are you playing?</p>
-        <div className="input-group course-input mb-3">
-          <input type="text" className="form-control" onChange={this.handleLayoutChange} placeholder="( red, white, blue, etc )" aria-label="Layout Name" aria-describedby="button-addon2" />
-          <div className="input-group-append">
-            <button className="btn btn-info" onClick={this.setLayout} type="button" id="course-btn">Submit</button>
+          <p>What Layout are you playing?</p>
+          <div className="input-group course-input mb-3">
+            <input type="text" className="form-control" onChange={this.handleLayoutChange} placeholder="( red, white, blue, etc )" aria-label="Layout Name" aria-describedby="button-addon2" />
+            <div className="input-group-append">
+            </div>
           </div>
+          <img src={disc} className="disc" alt="spinning disc" /><br />
+
+          <button className="btn btn-lg btn-success start-play-btn" onClick={this.start} type="button" id="course-btn">Start Playing!</button>
+
         </div>
-        <p>{this.state.layout ? `You're Playing the ${this.state.layout} layout` : ""}</p>
-        <img src={disc} className="disc" alt="spinning disc" /><br />
-        <button className="btn btn-lg btn-success start-play-btn" onClick={this.redirect} type="button" id="course-btn">Start Playing!</button>
-       
-      </div>
-    )
+      )
+    }
+    else if (this.state.hole <= this.state.numHoles) {
+      return (
+        <div className="hole-start">
+          <h1> Hole {this.state.hole}</h1>
+          <h1>What did you score?</h1>
+          <button className="btn btn-lg btn-success birdie-btn" onClick={this.birdie} type="button" id="birdie-btn">Birdie</button>
+          <button className="btn btn-lg btn-warning par-btn" onClick={this.par} type="button" id="par-btn">Par</button>
+          <button className="btn btn-lg btn-danger bogey-btn" onClick={this.bogey} type="button" id="bogey-btn">Bogey</button>
+          <h3>{this.state.message}</h3>
+  
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className="hole-start">
+          <h1> Good Job! Your round is over</h1>
+          <h1> Your total score was {this.state.score}
+          {this.state.layout ? ` on the ${this.state.layout} layout` : ""}
+          {this.state.course ? ` at the ${this.state.course} course` : ""}
+          </h1>
+        </div>
+      )
+
+    }
   }
 }
 export default StartRound

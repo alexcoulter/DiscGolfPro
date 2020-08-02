@@ -13,17 +13,18 @@ p {
 .navbar {
   background-color: #29abe1 !important;
   position: fixed;
+  top:0;
   width: 100%;
   z-index: 100;
 }
 
 .navbar p:hover {
-  color: #29abe1 !important;
+  color: lightgrey !important;
 }
 
 .link:hover {
   text-decoration: none;
-  color: #29abe1 !important;
+  color: lightgrey !important;
 }
 
 .navbar p {
@@ -104,4 +105,9 @@ margin-top: 50px;
   to {
     transform: rotate(360deg);
   }
+}
+
+.hole-start {
+  margin-top: 100px;
+  color: white;
 }
