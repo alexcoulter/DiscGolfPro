@@ -110,4 +110,42 @@ margin-top: 50px;
 .hole-start {
   margin-top: 100px;
   color: white;
+  padding:5%;
+  text-align: center;
+}
+
+.score-btn {
+  margin: 8px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.score-num {
+  max-width: 50px !important;
+  margin-left: 20px;
+}
+
+#otherScore {
+  margin:5px;
+  padding-left:15%;
+}
+
+.score-img {
+  width: 60%;
+  margin:10px;
+}
+
+.score-table {
+  display: inline-block;
+}
+
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.hidden {
+  display: none;
 }
