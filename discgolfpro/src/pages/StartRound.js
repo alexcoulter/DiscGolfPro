@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import disc from '../aviar.png';
 import par from '../bobby.jpg';
 import bird from '../bird.gif';
 import bogey from '../milhouse.gif'
@@ -17,9 +16,9 @@ class StartRound extends Component {
       score: 0,
       scoreArray: [],
       roundStarted: false,
-      message: "", 
+      message: "",
       par: false,
-      birdie: false, 
+      birdie: false,
       bogey: false,
       ace: false,
       multiBogey: false
@@ -33,35 +32,36 @@ class StartRound extends Component {
     });
   }
 
-  next = (e) => {
-    e.preventDefault();
-    let newHole = this.state.hole + 1;
-    this.setState({
-      hole: newHole
-    });
-  }
+  // next = (e) => {
+  //   e.preventDefault();
+  //   let newHole = this.state.hole + 1;
+  //   this.setState({
+  //     hole: newHole
+  //   });
+  // }
 
   birdie = (e) => {
     let newScore = this.state.score + 2;
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(2);
     let newHole = this.state.hole + 1;
-    this.setState({ 
+    this.setState({
       score: newScore,
       scoreArray: newScoreArray,
       hole: newHole,
       birdie: true,
       bogey: false,
       par: false,
-      message: "Nice Birdie!" 
+      message: "Nice Birdie!"
     });
+    this.triggerAnimation();
   }
   par = (e) => {
     let newScore = this.state.score + 3;
     let newHole = this.state.hole + 1;
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(3);
-    this.setState({ 
+    this.setState({
       score: newScore,
       scoreArray: newScoreArray,
       hole: newHole,
@@ -70,13 +70,14 @@ class StartRound extends Component {
       par: true,
       message: "Good Par!"
     });
+    this.triggerAnimation();
   }
   bogey = (e) => {
     let newScore = this.state.score + 4;
     let newHole = this.state.hole + 1;
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(4);
-    this.setState({ 
+    this.setState({
       score: newScore,
       scoreArray: newScoreArray,
       hole: newHole,
@@ -84,7 +85,15 @@ class StartRound extends Component {
       bogey: true,
       par: false,
       message: "Bogey's not too bad!"
-      });
+    });
+    this.triggerAnimation();
+  }
+
+  triggerAnimation = () => {
+    const element = document.getElementById("holeNum");
+    element.classList.remove("hole-num");
+    void element.offsetWidth;
+    element.classList.add("hole-num");
   }
 
   handleCourseChange = (event) => {
@@ -101,25 +110,25 @@ class StartRound extends Component {
   }
 
   manualScore = (e) => {
-    let score=parseInt(this.state.scoreInput);
-    let ace=false;
-    let multiBogey=false;
+    let score = parseInt(this.state.scoreInput);
+    let ace = false;
+    let multiBogey = false;
     let message = "";
-    let newHole, newScore, newScoreArray ;
-    if(score === 1) {
-      ace=true;
-      message= "Wow, an Ace! You must be awesome!"
+    let newHole, newScore, newScoreArray;
+    if (score === 1) {
+      ace = true;
+      message = "Wow, an Ace! You must be awesome!"
     }
-    else if(score > 4) {
+    else if (score > 4) {
       multiBogey = true;
-      message="Not great, but there's always next hole"
+      message = "Not great, but there's always next hole"
     }
-    if(score > 0) {
+    if (score > 0) {
       newHole = this.state.hole + 1;
       newScore = this.state.score + score;
       newScoreArray = this.state.scoreArray;
       newScoreArray.push(score);
-      this.setState({ 
+      this.setState({
         score: newScore,
         scoreArray: newScoreArray,
         hole: newHole,
@@ -129,8 +138,9 @@ class StartRound extends Component {
         ace: ace,
         multiBogey: multiBogey,
         message: message
-       });
+      });
     }
+    this.triggerAnimation();
   }
 
 
@@ -163,7 +173,6 @@ class StartRound extends Component {
             <div className="input-group-append">
             </div>
           </div>
-          <img src={disc} className="disc" alt="spinning disc" /><br />
 
           <button className="btn btn-lg btn-success start-play-btn" onClick={this.start} type="button" id="course-btn">Start Playing!</button>
 
@@ -174,55 +183,57 @@ class StartRound extends Component {
       return (
         <div className="hole-start">
           <h3>
-          {this.state.course ? `${this.state.course.toUpperCase()}` : ""}
-          {this.state.layout ? ` ${this.state.layout.toUpperCase()}` : ""}
+            {this.state.course ? `${this.state.course.toUpperCase()}` : ""}
+            {this.state.layout ? ` ${this.state.layout.toUpperCase()}` : ""}
           </h3>
-          <h4> *** Hole {this.state.hole} ***</h4>
+          <div id="holeNum" class ="hole-num">
+            <h4> *** Hole {this.state.hole} ***</h4>
+          </div>
           <h4>What did you score?</h4>
           <button className="btn btn-lg btn-success birdie-btn score-btn" onClick={this.birdie} type="button" id="birdie-btn">Birdie</button>
           <button className="btn btn-lg btn-warning par-btn score-btn" onClick={this.par} type="button" id="par-btn">Par</button>
           <button className="btn btn-lg btn-danger bogey-btn score-btn" onClick={this.bogey} type="button" id="bogey-btn">Bogey</button>
           <div className="input-group my-3 text-center">
             <span id="otherScore">Other Score: </span>
-          <input type="number" className="form-control score-num" onChange={this.handleScoreChange} placeholder="5" aria-label="Layout Name" aria-describedby="button-addon2" />
-          <div className="input-group-append">
-            <button className="btn btn-info" onClick={this.manualScore} type="button" id="course-btn">Submit</button>
+            <input type="number" className="form-control score-num" onChange={this.handleScoreChange} placeholder="5" aria-label="Layout Name" aria-describedby="button-addon2" />
+            <div className="input-group-append">
+              <button className="btn btn-info" onClick={this.manualScore} type="button" id="course-btn">Submit</button>
+            </div>
           </div>
-        </div>
-          <img src = {bird} className={this.state.birdie ? "score-img" : "score-img hidden"} id="birdImg" alt="Bird flying" />
-          <img src = {bogey} className={this.state.bogey ? "score-img" : "score-img hidden"} id="bogeyImg" alt="Milhouse throwing a frisbee" />
-          <img src = {par} className={this.state.par ? "score-img" : "score-img hidden"} id="parImg" alt="Bobby Hill as a disc golfer" />
+          <img src={bird} className={this.state.birdie ? "score-img" : "score-img hidden"} id="birdImg" alt="Bird flying" />
+          <img src={bogey} className={this.state.bogey ? "score-img" : "score-img hidden"} id="bogeyImg" alt="Milhouse throwing a frisbee" />
+          <img src={par} className={this.state.par ? "score-img" : "score-img hidden"} id="parImg" alt="Bobby Hill as a disc golfer" />
           <h4>{this.state.message}</h4>
-          <br/>
+          <br />
 
 
-          {this.state.scoreArray[0] ?  <table className = "score-table">
-              <thead>
+          {this.state.scoreArray[0] ? <table className="score-table">
+            <thead>
               <tr>
-              <th>Hole</th>
+                <th>Hole</th>
               </tr>
-              </thead>
-              <tbody>
+            </thead>
+            <tbody>
               <tr>
                 <td>Score
                 </td>
               </tr>
-              </tbody>
-            </table> : ""}
+            </tbody>
+          </table> : ""}
 
           {this.state.scoreArray.map((score, index) => (
-            <table className = "score-table" key={index}>
+            <table className="score-table" key={index}>
               <thead>
-              <tr>
-              <th>{index + 1}</th>
-              </tr>
+                <tr>
+                  <th>{index + 1}</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>
-                  {score}
-                </td>
-              </tr>
+                <tr>
+                  <td>
+                    {score}
+                  </td>
+                </tr>
               </tbody>
             </table>
           ))}
@@ -234,39 +245,39 @@ class StartRound extends Component {
         <div className="hole-start">
           <h3> Good Job! Your round is over</h3>
           <h3> Your total score was {this.state.score}
-          {this.state.layout ? ` on the ${this.state.layout} layout` : ""}
-          {this.state.course ? ` at the ${this.state.course} course` : ""}
+            {this.state.layout ? ` on the ${this.state.layout} layout` : ""}
+            {this.state.course ? ` at the ${this.state.course} course` : ""}
           </h3>
           <br />
-          {this.state.scoreArray[0] ?  <table className = "score-table">
-              <thead>
+          {this.state.scoreArray[0] ? <table className="score-table">
+            <thead>
               <tr>
-              <th>Hole</th>
+                <th>Hole</th>
               </tr>
-              </thead>
-              <tbody>
+            </thead>
+            <tbody>
               <tr>
                 <td>Score
                 </td>
               </tr>
-              </tbody>
-            </table> : ""}
-         
-         
+            </tbody>
+          </table> : ""}
+
+
 
           {this.state.scoreArray.map((score, index) => (
-            <table className = "score-table" key={index}>
+            <table className="score-table" key={index}>
               <thead>
-              <tr>
-              <th>{index + 1}</th>
-              </tr>
+                <tr>
+                  <th>{index + 1}</th>
+                </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>
-                  {score}
-                </td>
-              </tr>
+                <tr>
+                  <td>
+                    {score}
+                  </td>
+                </tr>
               </tbody>
             </table>
           ))}

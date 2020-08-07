@@ -9,7 +9,7 @@ import './App.css';
 function App() {
 
   return (
-    <div>
+    <>
       <HashRouter>
         <Navbar />
     <Switch>
@@ -18,7 +18,7 @@ function App() {
       <Route path="/" component={Home} />
       </Switch>
     </HashRouter>
-    </div>
+    </>
   );
 }
 

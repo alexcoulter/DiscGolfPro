@@ -13,18 +13,17 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      
         <div className="main">
           <h1>Disc Golf Pro</h1>
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            For all your Disc Golf needs
-        </p>
-        
-        <br></br>
-        <img src={disc} className="disc" alt="spinning disc" />
+            What a day to play a round of disc golf!
+          </p>
+          <br></br>
+          <img src={disc} className="disc" alt="spinning disc" />
         </div>
-      </div>
+      
     )
   }
 }
