@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import disc from '../aviar.png';
-
 
 class SavedRound extends Component {
   constructor(props) {
@@ -14,8 +12,8 @@ class SavedRound extends Component {
     return (
       <div className="saved-main">
       <h4>Your saved rounds:</h4>
-     
-        <img src={disc} className="disc" alt="spinning disc" />
+     <br></br><br></br>
+       <h4>...Coming Soon!</h4>
       </div>
     )
   }

@@ -11,8 +11,10 @@ p {
 }
 
 .navbar {
-  background-color: #29abe1 !important;
+  /* background-color: #29abe1 !important; */
+  background-image: linear-gradient(to right, black , rgb(75, 70, 70));
   position: fixed;
+  border-bottom: 2px solid grey;
   top:0;
   width: 100%;
   z-index: 100;
@@ -95,7 +97,7 @@ height: 30%;
 
 .course-input {
   max-width: 400px;
-  width: 95%;
+  width: 80%;
   margin:0 auto;
 }
 
@@ -113,21 +115,25 @@ margin-top: 30px;
 }
 
 .hole-start {
-  margin-top: 100px;
+  margin-top: 80px;
   color: white;
-  padding:5%;
+  padding:0%;
   text-align: center;
   overflow: hidden;
   width: 100%;
 }
 
+.hole-start h4 {
+  padding: 8px;
+}
+
 .hole-num {
   width: 100%;
   overflow: hidden;
-  /* max-width: 500px */
+  color: gold;
 }
 
-.hole-num h4 {
+.hole-num {
   animation: 1s slide-right 0s forwards;
   transform:translateX(-100%);
 }
@@ -138,9 +144,26 @@ margin-top: 30px;
 }
 
 .score-btn {
-  margin: 8px;
-  width: 80px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
   margin-bottom: 20px;
+}
+.score-btn .btn {
+  margin: calc(4px + .4vw);
+}
+
+.quit-btn, .play-btn {
+  display:block;
+  margin: 40px auto;
+}
+
+.final-score {
+  padding: 10px;
+}
+.other-div {
+  display: inline-block;
 }
 
 .score-num {

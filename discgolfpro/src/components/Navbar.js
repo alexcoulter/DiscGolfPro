@@ -17,7 +17,7 @@ function Navbar() {
               <NavLink to={"/"} className="link" exact activeClassName="active"><p className="nav-link pt-0 pb-0" id="homeLink" data-toggle="collapse" data-target=".navbar-collapse.show">Home</p></NavLink>
             </li>
             <li className="nav-item">
-              <NavLink to={"/start/"} className="link" activeClassName="active"><p className="nav-link pt-0 pb-0" id="startLink" data-toggle="collapse" data-target=".navbar-collapse.show">Start a new round</p></NavLink>
+              <NavLink to={"/start/"} className="link" activeClassName="active"><p className="nav-link pt-0 pb-0" id="startLink" data-toggle="collapse" data-target=".navbar-collapse.show">Play a round</p></NavLink>
             </li>
             <li className="nav-item">
               <NavLink to={"/saved/"} className="link" activeClassName="active"><p className="nav-link pt-0 pb-0" id="savedLink" data-toggle="collapse" data-target=".navbar-collapse.show">View a saved round</p></NavLink>
