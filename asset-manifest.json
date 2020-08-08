@@ -1,27 +1,29 @@
 {
   "files": {
-    "main.css": "/DiscGolfPro/static/css/main.7c06c8ba.chunk.css",
-    "main.js": "/DiscGolfPro/static/js/main.3dcab820.chunk.js",
-    "main.js.map": "/DiscGolfPro/static/js/main.3dcab820.chunk.js.map",
+    "main.css": "/DiscGolfPro/static/css/main.b0933263.chunk.css",
+    "main.js": "/DiscGolfPro/static/js/main.c010537e.chunk.js",
+    "main.js.map": "/DiscGolfPro/static/js/main.c010537e.chunk.js.map",
     "runtime-main.js": "/DiscGolfPro/static/js/runtime-main.ed09c8a7.js",
     "runtime-main.js.map": "/DiscGolfPro/static/js/runtime-main.ed09c8a7.js.map",
-    "static/js/2.252d67e8.chunk.js": "/DiscGolfPro/static/js/2.252d67e8.chunk.js",
-    "static/js/2.252d67e8.chunk.js.map": "/DiscGolfPro/static/js/2.252d67e8.chunk.js.map",
+    "static/js/2.1df6f62e.chunk.js": "/DiscGolfPro/static/js/2.1df6f62e.chunk.js",
+    "static/js/2.1df6f62e.chunk.js.map": "/DiscGolfPro/static/js/2.1df6f62e.chunk.js.map",
     "index.html": "/DiscGolfPro/index.html",
-    "precache-manifest.b3e58dc3561ee6dc26cf54ee58e1d4a6.js": "/DiscGolfPro/precache-manifest.b3e58dc3561ee6dc26cf54ee58e1d4a6.js",
+    "precache-manifest.6ba27fea5fa34c315149ff95ad8df4eb.js": "/DiscGolfPro/precache-manifest.6ba27fea5fa34c315149ff95ad8df4eb.js",
     "service-worker.js": "/DiscGolfPro/service-worker.js",
-    "static/css/main.7c06c8ba.chunk.css.map": "/DiscGolfPro/static/css/main.7c06c8ba.chunk.css.map",
-    "static/js/2.252d67e8.chunk.js.LICENSE.txt": "/DiscGolfPro/static/js/2.252d67e8.chunk.js.LICENSE.txt",
+    "static/css/main.b0933263.chunk.css.map": "/DiscGolfPro/static/css/main.b0933263.chunk.css.map",
+    "static/js/2.1df6f62e.chunk.js.LICENSE.txt": "/DiscGolfPro/static/js/2.1df6f62e.chunk.js.LICENSE.txt",
     "static/media/aviar.png": "/DiscGolfPro/static/media/aviar.b178ea08.png",
     "static/media/bird.gif": "/DiscGolfPro/static/media/bird.77668db0.gif",
     "static/media/bobby.jpg": "/DiscGolfPro/static/media/bobby.7e79118f.jpg",
     "static/media/disc.png": "/DiscGolfPro/static/media/disc.07a259fb.png",
-    "static/media/milhouse.gif": "/DiscGolfPro/static/media/milhouse.04d0c5f9.gif"
+    "static/media/kid.gif": "/DiscGolfPro/static/media/kid.31662fee.gif",
+    "static/media/milhouse.gif": "/DiscGolfPro/static/media/milhouse.04d0c5f9.gif",
+    "static/media/parDog.gif": "/DiscGolfPro/static/media/parDog.4fac8ed4.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.ed09c8a7.js",
-    "static/js/2.252d67e8.chunk.js",
-    "static/css/main.7c06c8ba.chunk.css",
-    "static/js/main.3dcab820.chunk.js"
+    "static/js/2.1df6f62e.chunk.js",
+    "static/css/main.b0933263.chunk.css",
+    "static/js/main.c010537e.chunk.js"
   ]
 }
