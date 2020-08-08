@@ -124,7 +124,7 @@ margin-top: 30px;
 .hole-num {
   width: 100%;
   overflow: hidden;
-  max-width: 500px
+  /* max-width: 500px */
 }
 
 .hole-num h4 {
@@ -147,10 +147,14 @@ margin-top: 30px;
   max-width: 50px !important;
   margin-left: 20px;
 }
+.other-div {
+  display: flex;
+  justify-content: center;
+
+}
 
 #otherScore {
   margin:5px;
-  padding-left:15%;
 }
 
 .score-img {

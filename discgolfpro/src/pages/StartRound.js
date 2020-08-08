@@ -7,14 +7,19 @@ import Slider from '../components/Slider';
 class StartRound extends Component {
   constructor(props) {
     super(props);
+    const scoreArray = JSON.parse(localStorage.getItem("scoreArray")) || [];
+    const hole = parseInt(localStorage.getItem("hole")) || 1;
+    const course = localStorage.getItem("course") || "";
+    const layout = localStorage.getItem("layout") || "";
+
     this.state = {
-      course: "",
-      layout: "",
+      course: course,
+      layout: layout,
       numHoles: 18,
-      hole: 1,
+      hole: hole,
       scoreInput: 0,
       score: 0,
-      scoreArray: [],
+      scoreArray: scoreArray,
       roundStarted: false,
       message: "",
       par: false,
@@ -44,7 +49,9 @@ class StartRound extends Component {
     let newScore = this.state.score + 2;
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(2);
+    localStorage.setItem("scoreArray", JSON.stringify(newScoreArray));
     let newHole = this.state.hole + 1;
+    localStorage.setItem("hole", newHole);
     this.setState({
       score: newScore,
       scoreArray: newScoreArray,
@@ -59,8 +66,10 @@ class StartRound extends Component {
   par = (e) => {
     let newScore = this.state.score + 3;
     let newHole = this.state.hole + 1;
+    localStorage.setItem("hole", newHole);
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(3);
+    localStorage.setItem("scoreArray", JSON.stringify(newScoreArray));
     this.setState({
       score: newScore,
       scoreArray: newScoreArray,
@@ -75,8 +84,10 @@ class StartRound extends Component {
   bogey = (e) => {
     let newScore = this.state.score + 4;
     let newHole = this.state.hole + 1;
+    localStorage.setItem("hole", newHole);
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(4);
+    localStorage.setItem("scoreArray", JSON.stringify(newScoreArray));
     this.setState({
       score: newScore,
       scoreArray: newScoreArray,
@@ -98,10 +109,12 @@ class StartRound extends Component {
 
   handleCourseChange = (event) => {
     this.setState({ course: event.target.value });
+    localStorage.setItem("course", event.target.value);
   }
 
   handleLayoutChange = (event) => {
     this.setState({ layout: event.target.value });
+    localStorage.setItem("layout", event.target.value);
   }
 
   handleScoreChange = (event) => {
@@ -125,9 +138,11 @@ class StartRound extends Component {
     }
     if (score > 0) {
       newHole = this.state.hole + 1;
+      localStorage.setItem("hole", newHole);
       newScore = this.state.score + score;
       newScoreArray = this.state.scoreArray;
       newScoreArray.push(score);
+      localStorage.setItem("scoreArray", JSON.stringify(newScoreArray));
       this.setState({
         score: newScore,
         scoreArray: newScoreArray,
@@ -193,7 +208,7 @@ class StartRound extends Component {
           <button className="btn btn-lg btn-success birdie-btn score-btn" onClick={this.birdie} type="button" id="birdie-btn">Birdie</button>
           <button className="btn btn-lg btn-warning par-btn score-btn" onClick={this.par} type="button" id="par-btn">Par</button>
           <button className="btn btn-lg btn-danger bogey-btn score-btn" onClick={this.bogey} type="button" id="bogey-btn">Bogey</button>
-          <div className="input-group my-3 text-center">
+          <div className="input-group my-3 text-center other-div">
             <span id="otherScore">Other Score: </span>
             <input type="number" className="form-control score-num" onChange={this.handleScoreChange} placeholder="5" aria-label="Layout Name" aria-describedby="button-addon2" />
             <div className="input-group-append">
@@ -241,6 +256,8 @@ class StartRound extends Component {
       )
     }
     else {
+      localStorage.clear();
+     
       return (
         <div className="hole-start">
           <h3> Good Job! Your round is over</h3>
