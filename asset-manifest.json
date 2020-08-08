@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/DiscGolfPro/static/css/main.7c06c8ba.chunk.css",
-    "main.js": "/DiscGolfPro/static/js/main.58539c4f.chunk.js",
-    "main.js.map": "/DiscGolfPro/static/js/main.58539c4f.chunk.js.map",
+    "main.js": "/DiscGolfPro/static/js/main.3dcab820.chunk.js",
+    "main.js.map": "/DiscGolfPro/static/js/main.3dcab820.chunk.js.map",
     "runtime-main.js": "/DiscGolfPro/static/js/runtime-main.ed09c8a7.js",
     "runtime-main.js.map": "/DiscGolfPro/static/js/runtime-main.ed09c8a7.js.map",
     "static/js/2.252d67e8.chunk.js": "/DiscGolfPro/static/js/2.252d67e8.chunk.js",
     "static/js/2.252d67e8.chunk.js.map": "/DiscGolfPro/static/js/2.252d67e8.chunk.js.map",
     "index.html": "/DiscGolfPro/index.html",
-    "precache-manifest.b6263f220793b89d1490b8c6c24ab9a4.js": "/DiscGolfPro/precache-manifest.b6263f220793b89d1490b8c6c24ab9a4.js",
+    "precache-manifest.b3e58dc3561ee6dc26cf54ee58e1d4a6.js": "/DiscGolfPro/precache-manifest.b3e58dc3561ee6dc26cf54ee58e1d4a6.js",
     "service-worker.js": "/DiscGolfPro/service-worker.js",
     "static/css/main.7c06c8ba.chunk.css.map": "/DiscGolfPro/static/css/main.7c06c8ba.chunk.css.map",
     "static/js/2.252d67e8.chunk.js.LICENSE.txt": "/DiscGolfPro/static/js/2.252d67e8.chunk.js.LICENSE.txt",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.ed09c8a7.js",
     "static/js/2.252d67e8.chunk.js",
     "static/css/main.7c06c8ba.chunk.css",
-    "static/js/main.58539c4f.chunk.js"
+    "static/js/main.3dcab820.chunk.js"
   ]
 }
