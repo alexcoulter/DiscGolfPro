@@ -37,14 +37,6 @@ class StartRound extends Component {
     });
   }
 
-  // next = (e) => {
-  //   e.preventDefault();
-  //   let newHole = this.state.hole + 1;
-  //   this.setState({
-  //     hole: newHole
-  //   });
-  // }
-
   birdie = (e) => {
     let newScore = this.state.score + 2;
     let newScoreArray = this.state.scoreArray;
