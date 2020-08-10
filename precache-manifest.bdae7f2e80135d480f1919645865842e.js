@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3232e58971a672bd3949d857d903d359",
+    "revision": "1a9752d27500a93c2f89ccfe06a0841a",
     "url": "/DiscGolfPro/index.html"
   },
   {
