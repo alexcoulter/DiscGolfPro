@@ -14,6 +14,7 @@ class StartRound extends Component {
     const hole = parseInt(localStorage.getItem("hole")) || 1;
     const course = localStorage.getItem("course") || "";
     const layout = localStorage.getItem("layout") || "";
+    const score = localStorage.getItem("score") || 0;
 
     this.state = {
       course: course,
@@ -21,7 +22,7 @@ class StartRound extends Component {
       numHoles: 18,
       hole: hole,
       scoreInput: 0,
-      score: 0,
+      score: score,
       scoreArray: scoreArray,
       roundStarted: false,
       message: "",
@@ -41,9 +42,10 @@ class StartRound extends Component {
   }
 
   birdie = (e) => {
-    let newScore = this.state.score + 2;
+    let newScore = parseInt(this.state.score) + 2;
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(2);
+    localStorage.setItem("score", newScore);
     localStorage.setItem("scoreArray", JSON.stringify(newScoreArray));
     let newHole = this.state.hole + 1;
     localStorage.setItem("hole", newHole);
@@ -61,8 +63,9 @@ class StartRound extends Component {
     this.triggerAnimation();
   }
   par = (e) => {
-    let newScore = this.state.score + 3;
+    let newScore = parseInt(this.state.score) + 3;
     let newHole = this.state.hole + 1;
+    localStorage.setItem("score", newScore);
     localStorage.setItem("hole", newHole);
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(3);
@@ -81,8 +84,9 @@ class StartRound extends Component {
     this.triggerAnimation();
   }
   bogey = (e) => {
-    let newScore = this.state.score + 4;
+    let newScore = parseInt(this.state.score) + 4;
     let newHole = this.state.hole + 1;
+    localStorage.setItem("score", newScore);
     localStorage.setItem("hole", newHole);
     let newScoreArray = this.state.scoreArray;
     newScoreArray.push(4);
@@ -146,7 +150,8 @@ class StartRound extends Component {
       document.getElementById("otherScoreDiv").classList.add("hidden");
       newHole = this.state.hole + 1;
       localStorage.setItem("hole", newHole);
-      newScore = this.state.score + score;
+      newScore = parseInt(this.state.score) + score;
+      localStorage.setItem("score", newScore);
       newScoreArray = this.state.scoreArray;
       newScoreArray.push(score);
       localStorage.setItem("scoreArray", JSON.stringify(newScoreArray));
@@ -217,6 +222,17 @@ class StartRound extends Component {
       )
     }
     else if (this.state.hole <= this.state.numHoles) {
+      var relativeScore = "Even";
+      if((this.state.score -((this.state.hole -1) * 3)) > 0){
+        relativeScore = "+" + (this.state.score -((this.state.hole -1) * 3));
+      }
+        else if((this.state.score -((this.state.hole -1) * 3)) === 0){
+          relativeScore = "Even";
+      }
+      else {
+        relativeScore =  this.state.score -((this.state.hole -1) * 3);
+      }
+
       return (
         <div className="hole-start">
           <h4 className="hole-num" id="courseInfo">
@@ -247,7 +263,7 @@ class StartRound extends Component {
           <img src={bogey} className={this.state.bogey ? "score-img" : "score-img hidden"}  alt="Bobby Hill as a disc golfer" />
           <h5>{this.state.message}</h5>
           <br />
-
+          <h5>Total Score: {this.state.score} {` (${relativeScore})`}</h5>
           {this.state.scoreArray[0] ? <table className="score-table">
             <thead>
               <tr>
@@ -285,11 +301,20 @@ class StartRound extends Component {
     }
     else {
       localStorage.clear();
+      if((this.state.score -((this.state.hole -1) * 3)) > 0){
+        relativeScore = "+" + (this.state.score -((this.state.hole -1) * 3));
+      }
+        else if((this.state.score -((this.state.hole -1) * 3)) === 0){
+          relativeScore = "Even";
+      }
+      else {
+        relativeScore =  this.state.score -((this.state.hole -1) * 3);
+      }
 
       return (
         <div className="hole-start final-score">
           <h4> Good Job! Your round is over</h4>
-          <h4> Your total score was {this.state.score}
+          <h4> Your total score was {this.state.score} {`(${relativeScore})`}
             {this.state.layout ? ` on the ${this.state.layout} layout` : ""}
             {this.state.course ? ` at ${this.state.course}` : ""}
           </h4>

@@ -182,6 +182,7 @@ margin-top: 30px;
 
 .score-img {
   width: 60%;
+  max-width: 400px;
   margin:10px;
 }
 
