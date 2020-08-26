@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "14698512c111e30ede442d448c5e6138",
+    "revision": "8ef6d56f3f594ec6242d35e3f558eda0",
     "url": "/DiscGolfPro/index.html"
   },
   {
-    "revision": "3872447368f7bae29d23",
-    "url": "/DiscGolfPro/static/css/main.b0933263.chunk.css"
+    "revision": "7115a1a0a09175285b13",
+    "url": "/DiscGolfPro/static/css/main.bb9c2b1f.chunk.css"
   },
   {
-    "revision": "2c2b2e64dbd21508b8a6",
-    "url": "/DiscGolfPro/static/js/2.1df6f62e.chunk.js"
+    "revision": "bb7b194f7e432efbe831",
+    "url": "/DiscGolfPro/static/js/2.6d9af1c8.chunk.js"
   },
   {
     "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/DiscGolfPro/static/js/2.1df6f62e.chunk.js.LICENSE.txt"
+    "url": "/DiscGolfPro/static/js/2.6d9af1c8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "3872447368f7bae29d23",
-    "url": "/DiscGolfPro/static/js/main.c010537e.chunk.js"
+    "revision": "7115a1a0a09175285b13",
+    "url": "/DiscGolfPro/static/js/main.c8579435.chunk.js"
   },
   {
     "revision": "fa058f239c18a13aafba",
