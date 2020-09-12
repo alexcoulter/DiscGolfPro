@@ -10,6 +10,23 @@ p {
   font-size: calc(8px + 3vmin);
 }
 
+h1, .main p {
+  font-family: 'Lora', serif;
+}
+
+.basket {
+  padding:5%;
+  border-radius: 50px;
+  border: 2px solid grey;
+  background-color: rgba(250, 250, 250, 0.15);
+  margin: 0vh 0;
+  height: 45vh;
+  min-height: 30vmin;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+
 .navbar {
   /* background-color: #29abe1 !important; */
   background-image: linear-gradient(to right, black , rgb(75, 70, 70));
@@ -38,14 +55,6 @@ p {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-.App-logo {
-  margin: 5vh 0;
-  height: 30vh;
-  margin-right:60px;
-  min-height: 30vmin;
-  pointer-events: none;
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .disc {
     animation: disc-spin infinite 5s linear;
@@ -62,7 +71,14 @@ p {
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(20px + 2vmin);
-  color: #29abe1;
+}
+
+.whatADay {
+  color: white;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #29abe1;
+
 }
 
 .main h1 {
@@ -85,6 +101,7 @@ height: 30%;
 .start-main h4, .saved-main h4 {
   color: #29abe1;
   margin-bottom: 20px;
+  font-size: calc(10px + 3vmin);
 }
 
 .btn-info {

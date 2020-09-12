@@ -16,8 +16,8 @@ class Home extends Component {
       
         <div className="main">
           <h1>Disc Golf Pro</h1>
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
+          <img src={logo} className="basket" alt="logo" />
+          <p className = "whatADay">
             What a day to play a round of disc golf!
           </p>
           <br></br>
