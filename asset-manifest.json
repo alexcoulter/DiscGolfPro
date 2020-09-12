@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/DiscGolfPro/static/css/main.9532cacc.chunk.css",
+    "main.css": "/DiscGolfPro/static/css/main.cbe8eedc.chunk.css",
     "main.js": "/DiscGolfPro/static/js/main.c1e968f8.chunk.js",
     "main.js.map": "/DiscGolfPro/static/js/main.c1e968f8.chunk.js.map",
     "runtime-main.js": "/DiscGolfPro/static/js/runtime-main.ed09c8a7.js",
@@ -8,9 +8,9 @@
     "static/js/2.6d9af1c8.chunk.js": "/DiscGolfPro/static/js/2.6d9af1c8.chunk.js",
     "static/js/2.6d9af1c8.chunk.js.map": "/DiscGolfPro/static/js/2.6d9af1c8.chunk.js.map",
     "index.html": "/DiscGolfPro/index.html",
-    "precache-manifest.ba6a51f07b3dccbdb0c1a59ffa93b747.js": "/DiscGolfPro/precache-manifest.ba6a51f07b3dccbdb0c1a59ffa93b747.js",
+    "precache-manifest.6fe20b8eecd8fbe9bcafb1e49bee78b0.js": "/DiscGolfPro/precache-manifest.6fe20b8eecd8fbe9bcafb1e49bee78b0.js",
     "service-worker.js": "/DiscGolfPro/service-worker.js",
-    "static/css/main.9532cacc.chunk.css.map": "/DiscGolfPro/static/css/main.9532cacc.chunk.css.map",
+    "static/css/main.cbe8eedc.chunk.css.map": "/DiscGolfPro/static/css/main.cbe8eedc.chunk.css.map",
     "static/js/2.6d9af1c8.chunk.js.LICENSE.txt": "/DiscGolfPro/static/js/2.6d9af1c8.chunk.js.LICENSE.txt",
     "static/media/aviar.png": "/DiscGolfPro/static/media/aviar.b178ea08.png",
     "static/media/bird.gif": "/DiscGolfPro/static/media/bird.77668db0.gif",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.ed09c8a7.js",
     "static/js/2.6d9af1c8.chunk.js",
-    "static/css/main.9532cacc.chunk.css",
+    "static/css/main.cbe8eedc.chunk.css",
     "static/js/main.c1e968f8.chunk.js"
   ]
 }
