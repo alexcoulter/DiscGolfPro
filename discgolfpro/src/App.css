@@ -22,8 +22,16 @@ h1, .main p {
   margin: 0vh 0;
   height: 45vh;
   min-height: 30vmin;
-  pointer-events: none;
-  overflow: hidden;
+  transform-style: preserve-3d;
+	transition: 1.2s transform;
+  /* pointer-events: none; */
+}
+
+.basket:hover {
+  transform: rotateY(180deg);
+}
+.basket:active {
+  transform: rotateY(180deg);
 }
 
 
