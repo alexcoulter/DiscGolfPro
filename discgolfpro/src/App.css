@@ -1,3 +1,5 @@
+
+/* All Pages */
 html, body, #root {
   background-color: rgb(21, 58, 21);
   height: 100%;
@@ -9,31 +11,6 @@ html, body, #root {
 p {
   font-size: calc(8px + 3vmin);
 }
-
-h1, .main p {
-  font-family: 'Lora', serif;
-}
-
-.basket {
-  padding:5%;
-  border-radius: 50px;
-  border: 2px solid grey;
-  background-color: rgba(250, 250, 250, 0.15);
-  margin: 0vh 0;
-  height: 45vh;
-  min-height: 30vmin;
-  transform-style: preserve-3d;
-	transition: 1.2s transform;
-  /* pointer-events: none; */
-}
-
-.basket:hover {
-  transform: rotateY(180deg);
-}
-.basket:active {
-  transform: rotateY(180deg);
-}
-
 
 .navbar {
   /* background-color: #29abe1 !important; */
@@ -63,22 +40,52 @@ h1, .main p {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .disc {
-    animation: disc-spin infinite 5s linear;
-    height:8vh;
-    margin-top: -100px;
-  }
-}
 
+
+/* HomePage CSS */
 .main {
-  min-height: 100%;
+  min-height: 90%;
   padding-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   font-size: calc(20px + 2vmin);
+  overflow:hidden;
+}
+
+.main h1 {
+  color: white;
+  margin:calc(25px + 2%) 0px;
+  font-size:calc(20px + 2.5vw);
+  height: 30%;
+  font-family: 'Lora', serif;
+  }
+
+.main p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: calc(20px + 1%) 10% 0 10%;
+  text-align: center;
+}
+
+.basket {
+  padding:5%;
+  border-radius: 50px;
+  border: 2px solid grey;
+  background-color: rgba(250, 250, 250, 0.15);
+  margin: 0vh 0;
+  height: 45vh;
+  min-height: 30vmin;
+  transform-style: preserve-3d;
+	transition: 1.2s transform;
+  /* pointer-events: none; */
+}
+
+.basket:hover {
+  transform: rotateY(180deg);
+}
+.basket:active {
+  transform: rotateY(180deg);
 }
 
 .whatADay {
@@ -89,17 +96,34 @@ h1, .main p {
 
 }
 
-.main h1 {
-color: white;
-margin:0;
-font-size:calc(20px + 2.5vw);
-height: 30%;
+@media (prefers-reduced-motion: no-preference) {
+  .disc {
+    animation: disc-spin infinite 5s linear;
+    height:8vh;
+    /* margin-top: -100px; */
+  }
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes disc-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+.moveRight{
+  border: 5px solid green;
+  margin-left: 100px;
+  transform: translate(-350px,0);
+  -webkit-transform: translate(-350px,0); /** Safari & Chrome **/
+  -o-transform: translate(-350px,0); /** Opera **/
+  -moz-transform: translate(-350px,0); /** Firefox **/
+}
+
+
+/* Start Round Page CSS */
 .start-main, .saved-main {
   color: white;
   text-align: center;
@@ -128,15 +152,6 @@ height: 30%;
 
 .start-play-btn {
 margin-top: 30px;
-}
-
-@keyframes disc-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .hole-start {
@@ -214,7 +229,6 @@ margin-top: 30px;
 .score-table {
   display: inline-block;
 }
-
 
 td, th {
   border: 1px solid #dddddd;

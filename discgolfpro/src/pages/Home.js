@@ -11,6 +11,16 @@ class Home extends Component {
     };
   }
 
+  discClick = () => {
+    var disc = document.getElementById("disc");
+    disc.animate({marginLeft:"400%"},
+    { duration: 1600, 
+      easing: 'ease-in-out',
+      iterations: 1        
+});
+    
+  }
+
   render() {
     return (
       
@@ -21,7 +31,7 @@ class Home extends Component {
             What a day to play a round of disc golf!
           </p>
           <br></br>
-          <img src={disc} className="disc" alt="spinning disc" />
+          <img src={disc} className="disc" id="disc" alt="spinning disc" onClick={this.discClick} />
         </div>
       
     )
