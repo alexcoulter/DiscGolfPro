@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/DiscGolfPro/precache-manifest.6fe20b8eecd8fbe9bcafb1e49bee78b0.js"
+  "/DiscGolfPro/precache-manifest.09172b0295cb28fa41386d44231cc317.js"
 );
 
 self.addEventListener('message', (event) => {
